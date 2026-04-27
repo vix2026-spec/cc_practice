@@ -1,0 +1,16 @@
+name: Run Hello Script
+
+on:
+  push:
+    branches: [ main ]   # 每次 push 到 main 就自動跑
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Python script
+        run: python hello.py
